@@ -1,0 +1,543 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #E5E7EB;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    grid-template-rows: 70px 1fr 50px;
+    width: 100%;
+    height: 100vh;
+    gap:3px;
+    
+}
+
+@font-face {
+    font-family: 'Okashi';
+    src: url('../fonts/OkashiRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+h1, h2, h3, h4, h5, h6,
+p, span, ul, li, ol {
+  margin: 0;
+  padding: 0;
+  font-weight: normal; /* optional */
+  list-style: none; /* for ul/ol */
+}
+
+.alert-window {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    background-color: green;
+    display: none;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+.side-bar{
+    grid-row: span 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px 1fr;
+    background-color: white;
+    font-family: 'Roboto';
+}
+
+.logo-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container h1{
+     font-family: 'Okashi', sans-serif;
+}
+
+.logo-container p{
+    text-transform: uppercase;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+
+}
+
+#mylogo{
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.main-menu{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 50px);
+    gap:1ch;
+}
+
+.side-icons{
+    width: 30px;
+    height: auto;
+    place-self: center;
+}
+
+.main-menu li{
+    width: 95%;
+    border-radius: 10px;
+    height: 100%;
+    place-self: center;
+    transition: 0.2s ease-in-out;
+}
+
+.main-menu li a{
+    width: 100%;
+    height: 100%;  
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-rows: 1fr;
+    text-decoration: none;
+    color: black;
+}
+
+.main-menu li p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.main-menu li:hover{
+    background-color: #E5E7EB;
+    transform: translateY(-5px);
+}
+
+.top-bar{
+    background-color: white;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 100px 50px 70px;
+    grid-template-rows: 70px;
+    position: relative;
+}
+
+
+.pfp-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.pfp-holder{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+#mypfp{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.username-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.username-box p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#mode-btns {
+    border-radius: 5px;
+    border: none;
+    background: none;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+
+#mode-btns:hover {
+   transform: translateY(-4px);
+}
+
+#modes{
+    width: 20px;
+    height: 20px;
+}
+
+
+.appearance-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+
+.drop-down-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#dd-btn{
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(90deg); /* original state */
+    transition: transform 0.3s ease;
+}
+
+#dd-btn.active{
+    transform: rotate(0deg); /* rotated state */
+}
+
+#arrow{
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+}
+
+.drop-down-window{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 170px;
+    height: auto;
+    background-color: white;
+    transform: translateY(75px);
+    display: none;
+    border-radius: 10px;
+}
+
+.dd-menu{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 30px);
+    gap:5px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.dd-menu li{
+    background-color: white;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.dd-menu li:hover{
+    background-color: #E5E7EB;
+}
+
+.dd-menu a{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: 1fr;
+    color: black;
+}
+
+.dd-menu p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.dd-icons{
+    width: 20px;
+    height: 20px;
+    place-self: center;
+}
+
+.main-content{
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard{
+   width: 100%; 
+   height: 100%;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 50px 130px auto;
+}
+
+.size-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: auto;
+    border-radius: 5px;
+    height: 80%;
+}
+
+.sizes{
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background: #E5E7EB;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.sizes.active{
+    background-color: #C92829;
+    color: white;
+}
+
+.sizes:hover{
+    transform: translateY(-3px);
+}
+
+.dash-head{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dash-head h6, .product-head h6{
+    font-size: 1.2rem;
+    font-family: 'Roboto';
+    font-weight: 600;
+}
+
+.monitor{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap:20px;
+    padding: 20px;
+}
+
+.mm{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-template-rows: 50px auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.m-icons{
+    grid-row: span 2;
+    width: 50px;
+    height: 50px;
+    place-self: center;
+
+}
+
+.mm h4{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    color:#C92829;
+    font-size: 1.2rem;
+    font-family: 'Okashi';
+    letter-spacing: 0.2ch;
+    font-weight: 800;
+}
+
+.mm p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.4rem;
+}
+
+.big-monitor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sales-graph{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.footer{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto';
+    font-size: 0.8rem;
+    letter-spacing: 0.1ch;
+}
+
+.products{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px auto 70px;
+}
+.product-head{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: auto 400px;
+    gap:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.product-head form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap:15px;
+}
+
+.product-head h6{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.product-head input{
+    place-self: center;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+}
+
+.product-head select{
+    place-self: center;
+    border-radius: 20px;
+    height: 30px;
+    width: 100%;
+}
+.product-table{
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+}
+.product-table table {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+}
+
+.product-table thead{
+    position: sticky;
+    top:0;
+    background-color: white;
+    height: 30px;
+}
+
+.product-table th, .product-table td{
+    text-align: center;
+}
+
+.product-table tbody tr{
+    height: 100px;
+    background-color: rgb(255, 249, 249);
+}
+
+.tb-pic{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.product-table th:first-child {
+    width: 100px;
+}
+
+.pagination .disabled .page-link {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+}
+
+.product-footer{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.pagination-buttons button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.pagination-buttons button:hover{
+    transform: translateY(-3px);
+}
