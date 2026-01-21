@@ -14,22 +14,22 @@
         </div>
         <div class="monitor">
             <div class="mm">
-                <img src="{{ Vite::asset('resources/images/m1.png') }}" class="m-icons">
+                <img src="/images/m1.png" class="m-icons">
                 <h4>Orders</h4>
                 <p>{{ str_pad($totalOrders, 2, '0', STR_PAD_LEFT) }}</p>
             </div>
             <div class="mm">
-                <img src="{{ Vite::asset('resources/images/m2.png') }}" class="m-icons">
+                <img src="/images/m2.png" class="m-icons">
                 <h4>Profit</h4>
                 <p>${{ number_format($totalProfit, 2) }}</p>
             </div>
             <div class="mm">
-                <img src="{{ Vite::asset('resources/images/m3.png') }}" class="m-icons">
+                <img src="/images/m3.png" class="m-icons">
                 <h4>Stocks</h4>
                 <p>{{ str_pad($totalStocks, 2, '0', STR_PAD_LEFT) }}</p>
             </div>
             <div class="mm">
-                <img src="{{ Vite::asset('resources/images/m4.png') }}" class="m-icons">
+                <img src="/images/m4.png" class="m-icons">
                 <h4>Sold</h4>
                 <p>{{ str_pad($totalSold, 2, '0', STR_PAD_LEFT) }}</p>
             </div>

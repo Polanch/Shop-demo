@@ -11,27 +11,27 @@
 <body>
     <div class="top-nav">
         <div class="logo-container">
-            <img src="{{ Vite::asset('resources/images/mylogo.png') }}" id="mylogo">
+            <img src="/images/mylogo.png" id="mylogo">
             <h1>Yame T-Shirt Company</h1>
         </div>
         <div class="profile-menu">
-            <div class="pfp"><img src="{{ Vite::asset('resources/images/pfp.png') }}" id="pfp"></div>
+            <div class="pfp"><img src="/images/pfp.png" id="pfp"></div>
             <div class="username-box">{{ auth()->user()->username ?? 'Guest' }}</div>
-            <div class="notification-box"><img src="{{ Vite::asset('resources/images/notif.png') }}" id="notif"></div>
-            <div class="cart-box"><img src="{{ Vite::asset('resources/images/cart.png') }}" id="cart"></div>
-            <div class="drop-down-button" id="dd-btn"><img src="{{ Vite::asset('resources/images/arrow.png') }}" id="arrow"></div>
+            <div class="notification-box"><img src="/images/notif.png" id="notif"></div>
+            <div class="cart-box"><img src="/images/cart.png" id="cart"></div>
+            <div class="drop-down-button" id="dd-btn"><img src="/images/arrow.png" id="arrow"></div>
         </div>
         <div class="drop-down-window" id="drop-down-window">
             <ul class="dd-menu">
                 <li>
                     <a href="#">
-                        <img src="{{ Vite::asset('resources/images/pfp.png') }}" class="dd-icons">
+                        <img src="/images/pfp.png" class="dd-icons">
                         <p>Profile</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <img src="{{ Vite::asset('resources/images/dd3.png') }}" class="dd-icons">
+                        <img src="/images/dd3.png" class="dd-icons">
                         <p>Settings</p>
                     </a>
                 </li>
@@ -39,7 +39,7 @@
                     <form method="POST" action="{{ route('logout') }}" style="width: 100%; height: 100%; margin: 0;">
                         @csrf
                         <button type="submit" style="background: none; border: none; cursor: pointer; width: 100%; height: 100%; display: grid; grid-template-columns: 30px auto; grid-template-rows: 1fr; color: black; padding: 0; text-align: left;">
-                            <img src="{{ Vite::asset('resources/images/dd4.png') }}" class="dd-icons" style="transform: rotate(180deg);">
+                            <img src="/images/dd4.png" class="dd-icons" style="transform: rotate(180deg);">
                             <p style="width: 100%; height: 100%; display: flex; align-items: center; padding-left: 15px; margin: 0;">Logout</p>
                         </button>
                     </form>
@@ -68,7 +68,7 @@
     <div class="main-shop">
         <div class="searchbar-container">
             <input type="text" name="" id="search-bar" placeholder="Search for you Shirt">
-            <img src="{{ Vite::asset('resources/images/search.png') }}" id="search-icon">
+            <img src="/images/search.png" id="search-icon">
         </div>
         <div class="product-container">
             @foreach($products as $product)
@@ -77,7 +77,7 @@
                         @if($product->pictures)
                             <img src="{{ asset('storage/' . $product->pictures) }}" class="prod-pic">
                         @else
-                            <img src="{{ Vite::asset('resources/images/empty.png') }}" class="prod-pic">
+                            <img src="/images/empty.png" class="prod-pic">
                         @endif
                         @if($product->product_stock == 0)
                             <div class="sold-out-overlay">

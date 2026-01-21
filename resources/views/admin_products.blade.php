@@ -56,7 +56,7 @@
                                 @if($product->pictures)
                                     <img src="{{ asset('storage/' . $product->pictures) }}" class="tb-pic">
                                 @else
-                                    <img src="{{ Vite::asset('resources/images/empty.png') }}" class="tb-pic">
+                                    <img src="/images/empty.png" class="tb-pic">
                                 @endif
                             </td>
                             <td>{{ $product->product_name }}</td>
