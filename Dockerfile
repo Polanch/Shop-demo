@@ -1,4 +1,4 @@
-FROM php:8.4-cli
+FROM php:8.3-cli
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -25,17 +25,28 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy application files
+# Copy composer files first
+COPY composer.json composer.lock ./
+
+# Install PHP dependencies (allow plugins and ignore platform reqs for build)
+RUN composer install --no-dev --optimize-autoloader --no-scripts --ignore-platform-reqs
+
+# Copy rest of application
 COPY . .
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader
+# Run composer scripts
+RUN composer dump-autoload --optimize
 
 # Install Node dependencies and build assets
 RUN npm install && npm run build
 
-# Set permissions
-RUN chmod -R 775 storage bootstrap/cache
+# Create storage directories and set permissions
+RUN mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache storage/logs bootstrap/cache
+RUN chmod -R 777 storage bootstrap/cache
+
+# Clear config cache
+RUN php artisan config:clear || true
+RUN php artisan cache:clear || true
 
 # Expose port
 EXPOSE 10000
