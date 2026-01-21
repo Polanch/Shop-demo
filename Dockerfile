@@ -25,28 +25,20 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy composer files first
-COPY composer.json composer.lock ./
-
-# Install PHP dependencies (allow plugins and ignore platform reqs for build)
-RUN composer install --no-dev --optimize-autoloader --no-scripts --ignore-platform-reqs
-
-# Copy rest of application
+# Copy all application files
 COPY . .
 
-# Run composer scripts
-RUN composer dump-autoload --optimize
+# Create storage directories
+RUN mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache storage/logs bootstrap/cache
+
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
 
 # Install Node dependencies and build assets
 RUN npm install && npm run build
 
-# Create storage directories and set permissions
-RUN mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache storage/logs bootstrap/cache
+# Set permissions
 RUN chmod -R 777 storage bootstrap/cache
-
-# Clear config cache
-RUN php artisan config:clear || true
-RUN php artisan cache:clear || true
 
 # Expose port
 EXPOSE 10000
