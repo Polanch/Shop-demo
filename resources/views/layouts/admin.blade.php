@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin</title>
      @vite('resources/css/admin_style.css')
 </head>
 <body>
-    <div class="side-bar">
+    <div class="side-bar sidebar">
         <div class="logo-container">
             <img src="{{ Vite::asset('resources/images/mylogo.png') }}" id="mylogo">
             <h1>Yame T-shirt</h1>
@@ -52,6 +53,11 @@
         </ul>
     </div>
     <div class="top-bar">
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="pfp-box">
             <span class="pfp-holder"><img src="{{ Vite::asset('resources/images/pfp.png') }}" id="mypfp"></span>
         </div>
@@ -77,7 +83,15 @@
                 <li><a href=""><img src="{{ Vite::asset('resources/images/dd1.png') }}" class="dd-icons"><p>Profile</p></a></li>
                 <li><a href=""><img src="{{ Vite::asset('resources/images/dd2.png') }}" class="dd-icons"><p>Security</p></a></li>
                 <li><a href=""><img src="{{ Vite::asset('resources/images/dd3.png') }}" class="dd-icons"><p>Settings</p></a></li>
-                <li><a href=""><img src="{{ Vite::asset('resources/images/dd4.png') }}" class="dd-icons"><p>Logout</p></a></li>
+                <li>
+                    <form method="POST" action="{{ route('logout') }}" style="width: 100%; height: 100%; margin: 0;">
+                        @csrf
+                        <button type="submit" style="background: none; border: none; cursor: pointer; width: 100%; height: 100%; display: grid; grid-template-columns: 30px auto; grid-template-rows: 1fr; color: black; padding: 0; text-align: left;">
+                            <img src="{{ Vite::asset('resources/images/dd4.png') }}" class="dd-icons">
+                            <p style="width: 100%; height: 100%; display: flex; align-items: center; padding-left: 15px; margin: 0;">Logout</p>
+                        </button>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>

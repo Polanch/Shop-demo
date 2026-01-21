@@ -9,6 +9,11 @@
 </head>
 <body>
     <div class="login-window">
+        <div class="logo-section">
+            <img src="{{ Vite::asset('resources/images/mylogo.png') }}" alt="Yame T-shirt Logo" class="login-logo">
+            <h1>Yame T-shirt</h1>
+            <p>COMPANY</p>
+        </div>
         <form action="{{ route('login') }}" method="post">
             @csrf
 
@@ -30,6 +35,50 @@
         @endif
 
     </div>
+
+    <!-- Manual Button -->
+    <button class="manual-btn" id="manualBtn">Manual</button>
+
+    <!-- Manual Popup -->
+    <div class="manual-overlay" id="manualOverlay">
+        <div class="manual-popup">
+            <button class="manual-close" id="manualClose">&times;</button>
+            <h2>Login Manual</h2>
+            <div class="manual-content">
+                <div class="account-info">
+                    <h3>Admin Account</h3>
+                    <p><strong>Username:</strong> Admin</p>
+                    <p><strong>Password:</strong> 12345</p>
+                </div>
+                <div class="account-info">
+                    <h3>Consumer Account</h3>
+                    <p><strong>Username:</strong> John</p>
+                    <p><strong>Password:</strong> 12345</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const manualBtn = document.getElementById('manualBtn');
+        const manualOverlay = document.getElementById('manualOverlay');
+        const manualClose = document.getElementById('manualClose');
+
+        manualBtn.addEventListener('click', () => {
+            manualOverlay.classList.add('active');
+        });
+
+        manualClose.addEventListener('click', () => {
+            manualOverlay.classList.remove('active');
+        });
+
+        manualOverlay.addEventListener('click', (e) => {
+            if (e.target === manualOverlay) {
+                manualOverlay.classList.remove('active');
+            }
+        });
+    </script>
+
     @vite('resources/js/script.js')
 </body>
 </html>

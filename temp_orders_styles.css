@@ -1,0 +1,244 @@
+
+/* Orders Page Styling */
+.orders {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 70px;
+}
+
+.order-head {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: auto 400px;
+    gap: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.order-head form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+}
+
+.order-head h6 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-family: 'Roboto';
+    font-weight: 600;
+}
+
+.order-head input {
+    place-self: center;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    padding: 0 10px;
+}
+
+.order-head select {
+    place-self: center;
+    border-radius: 20px;
+    height: 30px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.add-order {
+    place-self: center;
+    border-radius: 20px;
+    height: 30px;
+    width: 100%;
+    border: none;
+    background-color: #C92829;
+    color: white;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.2s ease-in-out;
+}
+
+.add-order:hover {
+    transform: translateY(-3px);
+}
+
+.order-table {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.order-table table {
+    width: 100%;
+    position: relative;
+}
+
+.order-table thead {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    height: 30px;
+}
+
+.order-table th,
+.order-table td {
+    text-align: center;
+    padding: 10px;
+}
+
+.order-table tbody tr {
+    background-color: white;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.order-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.order-items {
+    text-align: left;
+    font-size: 13px;
+}
+
+.order-item {
+    padding: 3px 0;
+    color: #555;
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-btn,
+.delete-order-btn {
+    width: 50px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
+    margin: 5px 3px;
+}
+
+.status-btn {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 2px 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+.status-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 10px rgba(0, 123, 255, 0.3);
+}
+
+.delete-order-btn {
+    background-color: #dc3545;
+    color: white;
+    box-shadow: 2px 2px 8px rgba(220, 53, 69, 0.2);
+}
+
+.delete-order-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 10px rgba(220, 53, 69, 0.3);
+}
+
+.order-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.status-container {
+    width: 300px;
+    padding: 30px;
+    text-align: center;
+}
+
+.status-container.active {
+    display: block;
+}
+
+.status-container h2 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.status-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.status-option {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-weight: 600;
+}
+
+.status-option:hover {
+    transform: translateY(-2px);
+}
+
+.status-option.pending {
+    border-color: #ffc107;
+}
+
+.status-option.pending:hover {
+    background-color: #fff3cd;
+}
+
+.status-option.completed {
+    border-color: #28a745;
+}
+
+.status-option.completed:hover {
+    background-color: #d4edda;
+}
+
+.status-option.cancelled {
+    border-color: #dc3545;
+}
+
+.status-option.cancelled:hover {
+    background-color: #f8d7da;
+}
