@@ -1,59 +1,128 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🐱 Yame T-Shirt POS System
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="resources/images/mylogo.png" width="200" alt="Yame T-Shirt Logo">
 </p>
 
-## About Laravel
+<p align="center">
+  <strong>A Point of Sale System for T-Shirt Business</strong>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-red" alt="Version">
+  <img src="https://img.shields.io/badge/Laravel-11.x-orange" alt="Laravel">
+  <img src="https://img.shields.io/badge/PHP-8.2+-blue" alt="PHP">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📋 About
 
-## Learning Laravel
+Yame T-Shirt POS System is a complete Point of Sale application built with Laravel. It features a Japanese-inspired design and provides both admin and consumer dashboards for managing t-shirt sales.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## ✨ Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🛒 Consumer Dashboard
+- Browse products with size filtering
+- Shopping cart with localStorage persistence
+- Real-time stock validation
+- Checkout with payment modal
+- Order confirmation
 
-## Laravel Sponsors
+### 👨‍💼 Admin Dashboard
+- **Dashboard**: Sales overview with interactive charts
+- **Products**: Add, edit, delete products with image upload
+- **Orders**: Manage orders, update status, track deliveries
+- **Users**: Add accounts, block/unblock, delete users
+- **Sales Reports**: Comprehensive analytics with multiple chart types
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 🎨 Design Features
+- Japanese-themed login page
+- Responsive design (Desktop, Tablet, Mobile)
+- Hamburger menu for mobile navigation
+- Chart.js powered analytics
 
-### Premium Partners
+## 🛠️ Tech Stack
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- **Backend**: Laravel 11.x, PHP 8.2+
+- **Database**: SQLite
+- **Frontend**: Blade Templates, CSS Grid/Flexbox
+- **Build Tool**: Vite
+- **Charts**: Chart.js
+- **Authentication**: Custom middleware with role-based access
 
-## Contributing
+## 🚀 Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+# Clone the repository
+git clone https://github.com/Polanch/Shop-demo.git
 
-## Code of Conduct
+# Navigate to project directory
+cd POS_System
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Install PHP dependencies
+composer install
 
-## Security Vulnerabilities
+# Install Node dependencies
+npm install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Copy environment file
+cp .env.example .env
 
-## License
+# Generate application key
+php artisan key:generate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Run migrations
+php artisan migrate
+
+# Build assets
+npm run build
+
+# Start the server
+php artisan serve
+```
+
+## 📱 Demo Accounts
+
+| Role     | Username | Password |
+|----------|----------|----------|
+| Admin    | Admin    | 12345    |
+| Consumer | John     | 12345    |
+
+## 👨‍💻 Developers
+
+### John Lloyd Olipani
+*Creator & Lead Developer*
+
+> "I tried making a system in a day using Copilot and bruh... everything went easy. Just need to guide the Copilot properly."
+
+- GitHub: [@Polanch](https://github.com/Polanch)
+
+### GitHub Copilot (Claude Opus 4.5)
+*AI Pair Programmer & Co-Author*
+
+Built this entire POS system together in a single coding session! Here's what we accomplished:
+
+- 🏗️ Architected the full-stack Laravel application from scratch
+- 🛒 Implemented consumer shopping cart with localStorage & real-time stock validation
+- 📊 Created interactive admin dashboards with Chart.js analytics
+- 🔐 Built role-based authentication with custom middleware
+- 📦 Designed order management system with status tracking
+- 👥 Developed user management with block/unblock functionality
+- 🎨 Styled everything with a Japanese-inspired theme
+- 📱 Made the entire admin panel responsive for mobile/tablet
+- 🐛 Debugged layout issues, z-index conflicts, and overflow problems together
+- ⚡ Optimized checkout flow to handle duplicate products properly
+
+*Proof that human creativity + AI assistance = rapid development magic* ✨
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+<p align="center">
+  Made with ❤️ in 2026
+</p>
