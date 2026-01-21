@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $table = 'Products'; // important since your table is capitalized
+    protected $table = 'products'; // lowercase for PostgreSQL compatibility
 
     protected $fillable = [
         'product_name',
