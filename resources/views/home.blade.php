@@ -10,7 +10,7 @@
 <body>
     <div class="login-window">
         <div class="logo-section">
-            <img src="{{ Vite::asset('resources/images/mylogo.png') }}" alt="Yame T-shirt Logo" class="login-logo">
+            <img src="/mylogo.png" alt="Yame T-shirt Logo" class="login-logo">
             <h1>Yame T-shirt</h1>
             <p>COMPANY</p>
         </div>
