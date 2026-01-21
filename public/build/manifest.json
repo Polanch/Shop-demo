@@ -1,0 +1,60 @@
+{
+  "resources/css/admin_style.css": {
+    "file": "assets/admin_style-EfzTKaR2.css",
+    "src": "resources/css/admin_style.css",
+    "isEntry": true,
+    "name": "admin_style",
+    "names": [
+      "admin_style.css"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-6Dsu2kLJ.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/css/consumer_style.css": {
+    "file": "assets/consumer_style-ts1IZ2Fh.css",
+    "src": "resources/css/consumer_style.css",
+    "isEntry": true,
+    "name": "consumer_style",
+    "names": [
+      "consumer_style.css"
+    ]
+  },
+  "resources/css/style.css": {
+    "file": "assets/style-BavolWAu.css",
+    "src": "resources/css/style.css",
+    "isEntry": true,
+    "name": "style",
+    "names": [
+      "style.css"
+    ]
+  },
+  "resources/fonts/OkashiRegular.ttf": {
+    "file": "assets/OkashiRegular-Bj7h79KF.ttf",
+    "src": "resources/fonts/OkashiRegular.ttf"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CAiCLEjY.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/consumer_script.js": {
+    "file": "assets/consumer_script-CPanSm2g.js",
+    "name": "consumer_script",
+    "src": "resources/js/consumer_script.js",
+    "isEntry": true
+  },
+  "resources/js/script.js": {
+    "file": "assets/script-C_0nQZ-2.js",
+    "name": "script",
+    "src": "resources/js/script.js",
+    "isEntry": true
+  }
+}
