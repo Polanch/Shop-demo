@@ -43,5 +43,5 @@ RUN chmod -R 777 storage bootstrap/cache
 # Expose port
 EXPOSE 10000
 
-# Run migrations and start server
-CMD php artisan migrate --force --seed && php artisan serve --host=0.0.0.0 --port=10000
+# Start server with storage setup
+CMD mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache && chmod -R 777 storage && php artisan config:clear && php artisan migrate --force --seed && php artisan serve --host=0.0.0.0 --port=10000
