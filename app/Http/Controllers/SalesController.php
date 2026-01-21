@@ -50,16 +50,17 @@ class SalesController extends Controller
         $productSales = $topProducts->pluck('total_sales')->map(fn($val) => (float)$val)->toArray();
 
         // Monthly sales (Bar Chart - Last 6 months)
+        // Use EXTRACT for PostgreSQL compatibility
         $monthlySales = Order::where('status', 'completed')
             ->where('order_date', '>=', now()->subMonths(5)->startOfMonth())
             ->select(
-                DB::raw('MONTH(order_date) as month'),
-                DB::raw('YEAR(order_date) as year'),
+                DB::raw('EXTRACT(MONTH FROM order_date) as month'),
+                DB::raw('EXTRACT(YEAR FROM order_date) as year'),
                 DB::raw('SUM(total_amount) as total')
             )
-            ->groupBy('year', 'month')
-            ->orderBy('year')
-            ->orderBy('month')
+            ->groupBy(DB::raw('EXTRACT(YEAR FROM order_date)'), DB::raw('EXTRACT(MONTH FROM order_date)'))
+            ->orderBy(DB::raw('EXTRACT(YEAR FROM order_date)'))
+            ->orderBy(DB::raw('EXTRACT(MONTH FROM order_date)'))
             ->get();
 
         $monthLabels = [];
