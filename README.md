@@ -21,6 +21,8 @@
 > ### 💬 From the Developer
 > *"I tried recreating my college project POS system, which took me 3 months to complete. But with Copilot, I just guided it and it went absurdly smooth and fast. I'm not kidding, this was built in a day."*
 >
+> *P.S. I tried making the Copilot to make the website flexible but the tablet and Android flexibility needs some work. Since this is manual with no front-end 3rd party tools, it is to be expected.*
+>
 > — **John Lloyd Olipani**
 
 ---
