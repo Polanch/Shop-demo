@@ -83,8 +83,8 @@ cp .env.example .env
 # Generate application key
 php artisan key:generate
 
-# Run migrations
-php artisan migrate
+# Run migrations and seed demo accounts
+php artisan migrate --seed
 
 # Build assets
 npm run build
