@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>POS System</title>
-    @vite('resources/css/style.css')
+    <link rel="stylesheet" href="/build/assets/style-BavolWAu.css">
 </head>
 <body>
     <div class="login-window">
@@ -79,6 +79,6 @@
         });
     </script>
 
-    @vite('resources/js/script.js')
+    <script src="/build/assets/script-C_0nQZ-2.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin</title>
-     @vite('resources/css/admin_style.css')
+    <link rel="stylesheet" href="/build/assets/admin_style-EfzTKaR2.css">
 </head>
 <body>
     <div class="side-bar sidebar">
@@ -101,6 +101,6 @@
     <div class="footer">
        <p> Developed by: John Lloyd Olipani | All Rights Reserved &copy 2026</p>
     </div>
-    @vite('resources/js/script.js')
+    <script src="/build/assets/script-C_0nQZ-2.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Document</title>
-    @vite('resources/css/consumer_style.css')
+    <link rel="stylesheet" href="/build/assets/consumer_style-ts1IZ2Fh.css">
 </head>
 <body>
     <div class="top-nav">
@@ -154,6 +154,6 @@
         </div>
     </div>
 
-    @vite('resources/js/consumer_script.js')
+    <script src="/build/assets/consumer_script-CPanSm2g.js"></script>
 </body>
 </html>
