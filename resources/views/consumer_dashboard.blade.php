@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Document</title>
-    <link rel="stylesheet" href="/build/assets/consumer_style-ts1IZ2Fh.css">
+    <link rel="stylesheet" href="/build/assets/consumer_style-5HLwZ0-W.css">
 </head>
 <body>
     <div class="top-nav">
@@ -75,9 +75,9 @@
                 <div class="product-card {{ $product->product_stock == 0 ? 'sold-out' : '' }}">
                     <div class="product-image">
                         @if($product->pictures)
-                            <img src="{{ asset('storage/' . $product->pictures) }}" class="prod-pic">
+                            <img src="{{ asset('storage/' . $product->pictures) }}" class="prod-pic" loading="lazy" alt="{{ $product->product_name }}">
                         @else
-                            <img src="/images/empty.png" class="prod-pic">
+                            <img src="/images/empty.png" class="prod-pic" loading="lazy" alt="{{ $product->product_name }}">
                         @endif
                         @if($product->product_stock == 0)
                             <div class="sold-out-overlay">
@@ -154,6 +154,6 @@
         </div>
     </div>
 
-    <script src="/build/assets/consumer_script-CPanSm2g.js"></script>
+    <script src="/build/assets/consumer_script-ESNVltgI.js"></script>
 </body>
 </html>

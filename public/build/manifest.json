@@ -9,7 +9,7 @@
     ]
   },
   "resources/css/app.css": {
-    "file": "assets/app-6Dsu2kLJ.css",
+    "file": "assets/app-DD3RGPy8.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -18,7 +18,7 @@
     ]
   },
   "resources/css/consumer_style.css": {
-    "file": "assets/consumer_style-ts1IZ2Fh.css",
+    "file": "assets/consumer_style-5HLwZ0-W.css",
     "src": "resources/css/consumer_style.css",
     "isEntry": true,
     "name": "consumer_style",
@@ -46,7 +46,7 @@
     "isEntry": true
   },
   "resources/js/consumer_script.js": {
-    "file": "assets/consumer_script-CPanSm2g.js",
+    "file": "assets/consumer_script-ESNVltgI.js",
     "name": "consumer_script",
     "src": "resources/js/consumer_script.js",
     "isEntry": true

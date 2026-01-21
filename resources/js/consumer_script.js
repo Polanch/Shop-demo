@@ -1,5 +1,16 @@
 // Cart functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Image lazy load fade-in effect
+    const productImages = document.querySelectorAll('.prod-pic');
+    productImages.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => img.classList.add('loaded'));
+            img.addEventListener('error', () => img.classList.add('loaded')); // Show even on error
+        }
+    });
+
     const cartBox = document.querySelector('.cart-box');
     const cartWindow = document.querySelector('.cart-window');
     const closeCart = document.querySelector('.close-cart');
