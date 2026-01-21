@@ -13,7 +13,15 @@
   <img src="https://img.shields.io/badge/Laravel-11.x-orange" alt="Laravel">
   <img src="https://img.shields.io/badge/PHP-8.2+-blue" alt="PHP">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+  <img src="https://img.shields.io/badge/Built%20in-1%20Day-brightgreen" alt="Built in 1 Day">
 </p>
+
+---
+
+> ### 💬 From the Developer
+> *"I tried recreating my college project POS system, which took me 3 months to complete. But with Copilot, I just guided it and it went absurdly smooth and fast. I'm not kidding, this was built in a day."*
+>
+> — **John Lloyd Olipani**
 
 ---
 
@@ -94,8 +102,6 @@ php artisan serve
 
 ### John Lloyd Olipani
 *Creator & Lead Developer*
-
-> "I tried making a system in a day using Copilot and bruh... everything went easy. Just need to guide the Copilot properly."
 
 - GitHub: [@Polanch](https://github.com/Polanch)
 
