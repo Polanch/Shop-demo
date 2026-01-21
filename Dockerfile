@@ -40,8 +40,11 @@ RUN npm install && npm run build
 # Set permissions
 RUN chmod -R 777 storage bootstrap/cache
 
+# Create storage link during build
+RUN php artisan storage:link || true
+
 # Expose port
 EXPOSE 10000
 
 # Start server with storage setup
-CMD mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache && chmod -R 777 storage && php artisan config:clear && php artisan migrate --force --seed && php artisan serve --host=0.0.0.0 --port=10000
+CMD mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache storage/app/public && chmod -R 777 storage && php artisan config:clear && php artisan migrate --force --seed && php artisan serve --host=0.0.0.0 --port=10000
