@@ -13,22 +13,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create Admin account
-        User::create([
-            'username' => 'Admin',
-            'email' => 'admin@yame.com',
-            'password' => Hash::make('12345'),
-            'role' => 'Admin',
-            'status' => 'active',
-        ]);
+        // Create Admin account (only if doesn't exist)
+        User::firstOrCreate(
+            ['email' => 'admin@yame.com'],
+            [
+                'username' => 'Admin',
+                'password' => Hash::make('12345'),
+                'role' => 'Admin',
+                'status' => 'active',
+            ]
+        );
 
-        // Create Consumer account
-        User::create([
-            'username' => 'John',
-            'email' => 'john@yame.com',
-            'password' => Hash::make('12345'),
-            'role' => 'Consumer',
-            'status' => 'active',
-        ]);
+        // Create Consumer account (only if doesn't exist)
+        User::firstOrCreate(
+            ['email' => 'john@yame.com'],
+            [
+                'username' => 'John',
+                'password' => Hash::make('12345'),
+                'role' => 'Consumer',
+                'status' => 'active',
+            ]
+        );
     }
 }
